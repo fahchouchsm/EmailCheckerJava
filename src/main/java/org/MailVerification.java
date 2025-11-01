@@ -11,7 +11,11 @@ public class MailVerification {
         return email;
     }
 
-    public boolean verifyEmail() {
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public boolean estValide() {
         if(email == null || email.isEmpty()) return false;
         email = email.toLowerCase().trim();
 
@@ -50,16 +54,6 @@ public class MailVerification {
             if(e == c) count++;
         }
         return count;
-    }
-
-    public static void main(String[] args){
-        MailVerification m = new MailVerification("si.mofff0@qq.com.ja");
-
-        if (m.verifyEmail()) {
-            System.out.println("all good");
-        } else {
-            System.out.println("error");
-        }
     }
 
 }
